@@ -1,15 +1,21 @@
 # ChatService
-Zum Bauen: 
+
+Create Java App:
+```bash
+mvn clean package
+```
+
+Build Docker Image: 
 ```bash
 docker compose build
 ```
 
-Zum Starten des Servers:
+Start Server:
 ```bash
 docker compose up -d server
 ```
 
-Zum Starten eines Clients (Bitte jeweils in einem eigenen Terminal):
+Start Client (Please each client in a new terminal):
 ```bash
 docker compose run -rm client
 ```

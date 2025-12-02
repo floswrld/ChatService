@@ -2,7 +2,7 @@ FROM eclipse-temurin:21-jre-alpine
 
 WORKDIR /app
 
-COPY chat-app.jar app.jar
+COPY ./target/ChatService-1.0-SNAPSHOT.jar app.jar
 
 EXPOSE 5001
 
