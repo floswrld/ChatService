@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  server:
+    build: .
+    image: chat-app
+    container_name: chat-server
+    command: ["server", "5001"]
+    ports:
+      - "5001:5001"
+    stdin_open: false
+    tty: false
+
+  client:
+    image: chat-app
+    depends_on:
+      - server
+    stdin_open: true
+    tty: true
+    command: ["client", "server", "5001"]
