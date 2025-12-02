@@ -1,12 +1,10 @@
 # ChatService Setup
 
 [OPTIONAL] Recreate Java App:
-```bash
-mvn clean package
-```
+`mvn clean package`
 
 Build Docker Image: 
-```bash
+```bash 
 docker compose build
 ```
 
