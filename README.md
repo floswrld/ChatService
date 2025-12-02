@@ -1,6 +1,6 @@
-# ChatService
+# ChatService Setup
 
-Create Java App:
+[OPTIONAL] Recreate Java App:
 ```bash
 mvn clean package
 ```
