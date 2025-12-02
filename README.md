@@ -17,5 +17,5 @@ docker compose up -d server
 
 Start Client (Please each client in a new terminal):
 ```bash
-docker compose run -rm client
+docker compose run --rm client
 ```
