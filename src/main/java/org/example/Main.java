@@ -2,6 +2,9 @@ package org.example;
 
 import java.util.Scanner;
 
+/**
+ * Starts server or client according to the commandline-argument
+ */
 public class Main {
     public static void main(String[] args) {
         if (args.length == 0) {

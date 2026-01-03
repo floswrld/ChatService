@@ -7,6 +7,10 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Manages the connections to the chatClients
+ * Broadcasts messages to all clients
+ */
 public class ChatServer {
 
     private final int port;
@@ -27,6 +31,9 @@ public class ChatServer {
 
                 ClientHandler handler = new ClientHandler(this, clientSocket);
                 clients.add(handler);
+
+                // Start the handler in a separate thread so the server can immediately
+                // go back to waiting for the next client (non-blocking)
                 new Thread(handler).start();
             }
         } catch (IOException e) {
@@ -36,6 +43,8 @@ public class ChatServer {
     }
 
     public void broadcast(String message, ClientHandler sender) {
+        // Synchronize on the 'clients' set to prevent exceptions
+        // if a client disconnects while we are iterating here.
         synchronized (clients) {
             for (ClientHandler client : clients) {
                 if (client != sender) {

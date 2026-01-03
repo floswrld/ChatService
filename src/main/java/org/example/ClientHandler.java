@@ -3,6 +3,11 @@ package org.example;
 import java.io.*;
 import java.net.Socket;
 
+/**
+ * Handles the communication lifecycle for a single connected client.
+ * Implements Runnable to execute in a separate thread, ensuring the server
+ * remains non-blocking while handling multiple clients.
+ */
 public class ClientHandler implements Runnable {
 
     private final ChatServer server;

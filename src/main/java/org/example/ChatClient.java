@@ -4,6 +4,11 @@ import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
 
+/**
+ * The client application that connects to the ChatServer.
+ * It handles user input in the main thread and listens for server messages
+ * in a separate background thread.
+ */
 public class ChatClient {
 
     private final String host;
